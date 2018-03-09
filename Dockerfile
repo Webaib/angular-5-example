@@ -1,5 +1,7 @@
 FROM nginx:1.13.9
 
+RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
+
 ## Copy our nginx config
 COPY nginx/ /etc/nginx/conf.d/
 
