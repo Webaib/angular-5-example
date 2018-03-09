@@ -2,8 +2,7 @@ FROM nginx:1.13.9
 
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
 RUN chmod -R 777 /var/log/nginx;
-RUN mkdir /var/cache/nginx/client_temp
-RUN chmod -R 777 /var/cache/nginx/client_temp;
+RUN chmod -R 777 /var/cache/nginx;
 
 ## Copy our nginx config
 COPY nginx/ /etc/nginx/conf.d/
