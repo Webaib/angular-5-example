@@ -1,8 +1,4 @@
-FROM nginx:1.13.9
-
-RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
-RUN chmod -R 777 /var/log/nginx;
-RUN chmod -R 777 /var/cache/nginx;
+FROM bitnami/nginx:latest
 
 ## Copy our nginx config
 COPY nginx/ /etc/nginx/conf.d/
