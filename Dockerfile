@@ -1,8 +1,7 @@
 FROM nginx:1.13.9
 
 RUN sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf
-RUN chown -R www-data:www-data /var/log/nginx;
-RUN chmod -R 755 /var/log/nginx;
+RUN chmod -R 777 /var/log/nginx;
 RUN mkdir /var/cache/nginx/client_temp
 RUN chmod -R 777 /var/cache/nginx/client_temp;
 
